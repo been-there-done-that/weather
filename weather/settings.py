@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'weather.wsgi.application'
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'weather',
-            'USER': 'personify',
-            'PASSWORD': 'personify',
-            'HOST': '127.0.0.1',
+            'NAME': 'bNxyCFyVC1',
+            'USER': 'bNxyCFyVC1',
+            'PASSWORD': '2v7VMPDq6c',
+            'HOST': 'remotemysql.com',
             'PORT': '3306',
     }
 }
