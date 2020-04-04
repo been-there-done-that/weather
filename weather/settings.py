@@ -74,17 +74,27 @@ WSGI_APPLICATION = 'weather.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'bNxyCFyVC1',
+#             'USER': 'bNxyCFyVC1',
+#             'PASSWORD': '2v7VMPDq6c',
+#             'HOST': 'remotemysql.com',
+#             'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'bNxyCFyVC1',
-            'USER': 'bNxyCFyVC1',
-            'PASSWORD': '2v7VMPDq6c',
-            'HOST': 'remotemysql.com',
+            'NAME': 'internetwasmyide$weather',
+            'USER': 'internetwasmyide',
+            'PASSWORD': 'qwerty123',
+            'HOST': 'internetwasmyidea.mysql.pythonanywhere-services.com',
             'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
