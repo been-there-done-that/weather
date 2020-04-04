@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from platform import node
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'xiw!5_4hjmh+86osu4q*_6$!)s8$8$=@90!&04dhc88$tqr(cw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['internetwasmyidea.pythonanywhere.com']
 
@@ -74,17 +75,6 @@ WSGI_APPLICATION = 'weather.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': 'bNxyCFyVC1',
-#             'USER': 'bNxyCFyVC1',
-#             'PASSWORD': '2v7VMPDq6c',
-#             'HOST': 'remotemysql.com',
-#             'PORT': '3306',
-#     }
-# }
-
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -95,6 +85,34 @@ DATABASES = {
             'PORT': '3306',
     }
 }
+
+if False:
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'bNxyCFyVC1',
+                'USER': 'bNxyCFyVC1',
+                'PASSWORD': '2v7VMPDq6c',
+                'HOST': 'remotemysql.com',
+                'PORT': '3306',
+        }
+    }
+
+if node() == 'ubuntu':
+    DEBUG = True
+    ALLOWED_HOSTS = []
+
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'personify_1',
+                'USER': 'personify',
+                'PASSWORD': 'personify',
+                'HOST': 'localhost',
+                'PORT': '3306',
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

@@ -8,8 +8,10 @@ def index(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=c834efb84c6315bba71d237277828930'
 
     if request.method == 'POST': # only true if form is submitted
+        # breakpoint()
         form = forms.CityForm(request.POST) # add actual request data to form for processing
-        form.save() # will validate and save if validate
+        if not models.City.objects.filter(name=request.POST.get('name')).exists():
+            form.save() # will validate and save if validate
 
     form = forms.CityForm()
 
